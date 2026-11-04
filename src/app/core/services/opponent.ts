@@ -8,6 +8,6 @@ export class OpponentService {
   private readonly http = inject(HttpClient);
 
   getOpponents() {
-    return this.http.get<Opponent[]>('http://localhost:3000/api/opponents');
+    return this.http.get<Opponent[]>('/api/opponents');
   }
 }

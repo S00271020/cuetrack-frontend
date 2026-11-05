@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { inject } from '@angular/core';
+import { Component, inject, signal, OnInit } from '@angular/core';
 import { OpponentService } from '../../../core/services/opponent';
-import { OnInit } from '@angular/core';
+import { Opponent } from '../../../core/models/opponent';
 
 @Component({
   imports: [],
@@ -12,10 +11,20 @@ import { OnInit } from '@angular/core';
 export class OpponentList implements OnInit {
   private readonly opponentService = inject(OpponentService);
 
+  readonly opponents = signal<Opponent[]>([]);
+  readonly loading = signal(true);
+  readonly errorMessage = signal('');
+
   ngOnInit(): void {
     this.opponentService.getOpponents().subscribe({
-      next: (opponents) => console.log(opponents),
-      error: (error) => console.error('Could not load opponents:', error),
+      next: (opponents) => {
+        this.opponents.set(opponents);
+        this.loading.set(false);
+      },
+      error: () => {
+        this.errorMessage.set('Could not load opponents. Please try again later.');
+        this.loading.set(false);
+      },
     });
   }
 }

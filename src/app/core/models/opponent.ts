@@ -5,3 +5,8 @@ export interface Opponent {
   createdAt: string;
   updatedAt: string;
 }
+
+export interface OpponentInput {
+  name: string;
+  notes?: string;
+}

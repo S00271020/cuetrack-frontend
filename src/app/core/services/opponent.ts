@@ -1,7 +1,7 @@
 import { Service } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { inject } from '@angular/core';
-import { Opponent } from '../models/opponent';
+import { Opponent, OpponentInput } from '../models/opponent';
 
 @Service()
 export class OpponentService {
@@ -9,5 +9,9 @@ export class OpponentService {
 
   getOpponents() {
     return this.http.get<Opponent[]>('/api/opponents');
+  }
+
+  createOpponent(data: OpponentInput) {
+    return this.http.post<Opponent>('/api/opponents', data);
   }
 }

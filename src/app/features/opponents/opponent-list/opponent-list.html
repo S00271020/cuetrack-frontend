@@ -1,1 +1,15 @@
 <h2>Opponents</h2>
+
+@if (loading()) {
+  <p>Loading opponents…</p>
+} @else if (errorMessage()) {
+  <p role="alert">{{ errorMessage() }}</p>
+} @else {
+  <ul>
+    @for (opponent of opponents(); track opponent._id) {
+      <li>{{ opponent.name }}</li>
+    } @empty {
+      <li>No opponents yet.</li>
+    }
+  </ul>
+}

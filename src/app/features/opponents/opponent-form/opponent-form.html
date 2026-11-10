@@ -1,0 +1,30 @@
+<h2>Add opponent</h2>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" />
+
+    @if (form.controls.name.hasError('required')) {
+      <mat-error>Name is required.</mat-error>
+    } @else if (form.controls.name.hasError('pattern')) {
+      <mat-error>Name cannot contain only spaces.</mat-error>
+    } @else if (form.controls.name.hasError('maxlength')) {
+      <mat-error>Name must be at most 100 characters.</mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Notes</mat-label>
+    <textarea matInput formControlName="notes"></textarea>
+    @if (form.controls.notes.hasError('maxlength')) {
+      <mat-error>Notes must be at most 500 characters.</mat-error>
+    }
+  </mat-form-field>
+  @if (errorMessage()) {
+    <p role="alert">{{ errorMessage() }}</p>
+  }
+
+  <button mat-flat-button type="submit" [disabled]="saving()">
+    {{ saving() ? 'Saving…' : 'Save opponent' }}
+  </button>
+</form>

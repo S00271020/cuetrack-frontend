@@ -11,10 +11,12 @@ import { Opponent } from '../../../core/models/opponent';
 export class OpponentList implements OnInit {
   private readonly opponentService = inject(OpponentService);
 
+  // Define signals to hold the list of opponents, loading state, and error message
   readonly opponents = signal<Opponent[]>([]);
   readonly loading = signal(true);
   readonly errorMessage = signal('');
 
+  // The ngOnInit lifecycle hook is called when the component is initialized
   ngOnInit(): void {
     this.opponentService.getOpponents().subscribe({
       next: (opponents) => {

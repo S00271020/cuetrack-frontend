@@ -1,13 +1,35 @@
 <h2>Statistics</h2>
 
-@if (statistics(); as stats) {
-  <ul>
-    <li>Matches played: {{ stats.matchesPlayed }}</li>
-    <li>Wins: {{ stats.wins }}</li>
-    <li>Losses: {{ stats.losses }}</li>
-    <li>Draws: {{ stats.draws }}</li>
-    <li>Frames won: {{ stats.framesWon }}</li>
-    <li>Frames lost: {{ stats.framesLost }}</li>
-    <li>Win Percentage: {{ stats.winPercentage }}</li>
-  </ul>
+<label for="opponent-filter">Filter by opponent</label>
+<select
+  id="opponent-filter"
+  #opponentSelect
+  [disabled]="loading()"
+  (change)="loadStatistics(opponentSelect.value || undefined)"
+>
+  <option value="">All opponents</option>
+  @for (opponent of opponents(); track opponent._id) {
+    <option [value]="opponent._id">{{ opponent.name }}</option>
+  }
+</select>
+@if (opponentsErrorMessage()) {
+  <p role="alert">{{ opponentsErrorMessage() }}</p>
+}
+
+@if (loading()) {
+  <p>Loading statistics…</p>
+} @else if (errorMessage()) {
+  <p role="alert">{{ errorMessage() }}</p>
+} @else {
+  @if (statistics(); as stats) {
+    <ul>
+      <li>Matches played: {{ stats.matchesPlayed }}</li>
+      <li>Wins: {{ stats.wins }}</li>
+      <li>Losses: {{ stats.losses }}</li>
+      <li>Draws: {{ stats.draws }}</li>
+      <li>Frames won: {{ stats.framesWon }}</li>
+      <li>Frames lost: {{ stats.framesLost }}</li>
+      <li>Win Percentage: {{ stats.winPercentage }}</li>
+    </ul>
+  }
 }

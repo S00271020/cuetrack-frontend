@@ -1,0 +1,13 @@
+<h2>Statistics</h2>
+
+@if (statistics(); as stats) {
+  <ul>
+    <li>Matches played: {{ stats.matchesPlayed }}</li>
+    <li>Wins: {{ stats.wins }}</li>
+    <li>Losses: {{ stats.losses }}</li>
+    <li>Draws: {{ stats.draws }}</li>
+    <li>Frames won: {{ stats.framesWon }}</li>
+    <li>Frames lost: {{ stats.framesLost }}</li>
+    <li>Win Percentage: {{ stats.winPercentage }}</li>
+  </ul>
+}

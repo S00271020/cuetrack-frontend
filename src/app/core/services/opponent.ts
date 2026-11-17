@@ -7,11 +7,20 @@ import { Opponent, OpponentInput } from '../models/opponent';
 export class OpponentService {
   private readonly http = inject(HttpClient);
 
+  // Sends http requests to certain urls
   getOpponents() {
     return this.http.get<Opponent[]>('/api/opponents');
   }
 
   createOpponent(data: OpponentInput) {
     return this.http.post<Opponent>('/api/opponents', data);
+  }
+
+  editOpponent(id: string, data: OpponentInput) {
+    return this.http.put<Opponent>(`/api/opponents/${id}`, data);
+  }
+
+  deleteOpponent(id: string) {
+    return this.http.delete<void>(`/api/opponents/${id}`);
   }
 }

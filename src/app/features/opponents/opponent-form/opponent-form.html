@@ -1,5 +1,7 @@
-<h2>Add opponent</h2>
-
+<h2>{{ opponentId ? 'Edit opponent' : 'Add opponent' }}</h2>
+@if (loading()) {
+  <p>Loading opponent…</p>
+}
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
   <mat-form-field appearance="outline">
     <mat-label>Name</mat-label>
@@ -24,7 +26,7 @@
     <p role="alert">{{ errorMessage() }}</p>
   }
 
-  <button mat-flat-button type="submit" [disabled]="saving()">
+  <button mat-flat-button type="submit" [disabled]="saving() || loading() || loadingFailed()">
     {{ saving() ? 'Saving…' : 'Save opponent' }}
   </button>
 </form>

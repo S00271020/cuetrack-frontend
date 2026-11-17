@@ -32,3 +32,17 @@ li {
   border-radius: 0.5rem;
   background: #242a27;
 }
+
+select {
+  max-width: 100%;
+  font-family: inherit;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+option {
+  color: #f4f6f5;
+  font-size: 1.1rem;
+  font-family: Calibri;
+  background-color: #242a27;
+}

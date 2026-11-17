@@ -32,23 +32,8 @@ export class OpponentList implements OnInit {
     });
   }
 
-  editOpponent(id: string, opponent: Opponent): void {
-    // Implement the logic to edit the opponent
-    this.opponentService.editOpponent(id, opponent).subscribe({
-      next: () => {
-        this.errorMessage.set('Opponent updated successfully.');
-        this.loading.set(false);
-
-        console.log('Editing opponent:', opponent);
-      },
-      error: () => {
-        this.errorMessage.set('Could not edit opponent. Please try again later.');
-        this.loading.set(false);
-      },
-    });
-  }
-
   deleteOpponent(id: string): void {
+    // If the user confirms, delete the opponent
     if (!window.confirm('Delete this opponent?')) {
       return;
     }

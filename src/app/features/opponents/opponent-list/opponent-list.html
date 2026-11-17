@@ -10,13 +10,20 @@
       <li>
         <span>{{ opponent.name }}</span>
         <div class="opponent-actions">
-          <a class="editButton">Edit Opponent</a>
-          <a class="deleteButton" (click)="deleteOpponent(opponent._id)">Delete Opponent</a>
+          <a class="editButton" [routerLink]="['/opponents', opponent._id, 'edit']">
+            Edit Opponent
+          </a>
+          <button type="button" class="deleteButton" (click)="deleteOpponent(opponent._id)">
+            Delete Opponent
+          </button>
         </div>
       </li>
     } @empty {
       <li>No opponents yet.</li>
     }
   </ul>
+  @if (deleteErrorMessage()) {
+    <p role="alert">{{ deleteErrorMessage() }}</p>
+  }
   <a class="addButton" routerLink="/opponents/new">Add Opponent</a>
 }

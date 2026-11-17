@@ -11,30 +11,31 @@ h2 {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 0.9rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  border-radius: 1rem;
   background-color: #363636;
 }
 
-.opponent-actions a {
+.opponent-actions button,
+a {
   padding: 0.5rem 1rem;
   margin: 0.5rem;
   border: none;
   border-radius: 1.5rem;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #f4f6f5;
 }
 
 .addButton {
   margin-top: 2rem;
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   border: none;
   border-radius: 1.5rem;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   color: #ffffff;
   background-color: #ff57db;
   text-decoration: none;
@@ -50,12 +51,14 @@ h2 {
 .editButton {
   margin-top: 0.5rem;
   padding: 0.5rem 1rem;
-  background-color: #1c7430;
+  background-color: #0088ff;
   color: #ffffff;
+  text-decoration: none;
 }
 
 .editButton:hover {
-  background-color: #008d1e;
+  background-color: #69a0ff;
+
   transition: 0.2s ease-in-out;
 }
 .deleteButton {

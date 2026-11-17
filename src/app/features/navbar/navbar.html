@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand-logo" routerLink="/">
+      <span class="brand-icon">🔴</span>
+      <span>CueTrack</span>
+    </a>
+
+    <div class="navbar-nav ms-auto d-flex flex-row gap-4">
+      <a
+        class="nav-link custom-link"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Home
+      </a>
+
+      <a class="nav-link custom-link" routerLink="/opponents" routerLinkActive="active">
+        Opponents
+      </a>
+
+      <a class="nav-link custom-link" routerLink="/statistics" routerLinkActive="active">
+        Statistics
+      </a>
+
+      <a class="nav-link custom-link" routerLink="/opponents/new" routerLinkActive="active">
+        Add
+      </a>
+    </div>
+  </div>
+</nav>

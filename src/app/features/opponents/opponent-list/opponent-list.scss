@@ -1,0 +1,71 @@
+h2 {
+  margin: 2rem 0 2rem;
+  padding-left: 0.75rem;
+  border-left: 5px solid #e3555c;
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.opponent-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  margin: 0.9rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  background-color: #363636;
+}
+
+.opponent-actions a {
+  padding: 0.5rem 1rem;
+  margin: 0.5rem;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #f4f6f5;
+}
+
+.addButton {
+  margin-top: 2rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #ffffff;
+  background-color: #ff57db;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.addButton:hover {
+  background-color: #ff89e5;
+  color: #ffffff;
+  transition: 0.2s ease-in-out;
+}
+
+.editButton {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #1c7430;
+  color: #ffffff;
+}
+
+.editButton:hover {
+  background-color: #008d1e;
+  transition: 0.2s ease-in-out;
+}
+.deleteButton {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #dc3545;
+  color: #ffffff;
+}
+
+.deleteButton:hover {
+  background-color: #bf0000;
+  transition: 0.2s ease-in-out;
+}

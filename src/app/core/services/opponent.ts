@@ -8,18 +8,23 @@ export class OpponentService {
   private readonly http = inject(HttpClient);
 
   // Sends http requests to certain urls
+
+  // Get all opponents
   getOpponents() {
     return this.http.get<Opponent[]>('/api/opponents');
   }
 
+  // Create new opponent
   createOpponent(data: OpponentInput) {
     return this.http.post<Opponent>('/api/opponents', data);
   }
 
+  // Edit opponent
   editOpponent(id: string, data: OpponentInput) {
     return this.http.put<Opponent>(`/api/opponents/${id}`, data);
   }
 
+  // Delete opponent
   deleteOpponent(id: string) {
     return this.http.delete<void>(`/api/opponents/${id}`);
   }

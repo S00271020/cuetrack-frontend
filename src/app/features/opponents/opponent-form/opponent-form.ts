@@ -24,6 +24,7 @@ export class OpponentForm {
   // Define the form group with form controls for name and notes
   readonly form = new FormGroup({
     name: new FormControl('', {
+      // Ensure the name field is non-nullable and has validators for required, max length, and pattern
       nonNullable: true,
       // Validators for the name field: required, max length of 100, and must contain at least one non-whitespace character
       validators: [Validators.required, Validators.maxLength(100), Validators.pattern(/\S/)],

@@ -1,6 +1,6 @@
 :host {
   display: block;
-  max-width: 960px;
+  max-width: 1460px;
   margin-inline: auto;
   padding: clamp(1rem, 4vw, 3rem);
 }
@@ -16,4 +16,5 @@ h1 {
 p {
   color: #bfc9c4;
   line-height: 1.6;
+  font-size: 1.5rem;
 }

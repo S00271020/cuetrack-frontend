@@ -7,4 +7,5 @@ export const routes: Routes = [
   { path: 'opponents', component: OpponentList },
   { path: 'opponents/new', component: OpponentForm },
   { path: 'statistics', component: StatisticsPage },
+  { path: 'opponents/:id/edit', component: OpponentForm },
 ];

@@ -14,6 +14,11 @@ export class OpponentService {
     return this.http.get<Opponent[]>('/api/opponents');
   }
 
+  // Get opponent by id
+  getOpponent(id: String) {
+    return this.http.get<Opponent>(`/api/opponents/${id}`);
+  }
+
   // Create new opponent
   createOpponent(data: OpponentInput) {
     return this.http.post<Opponent>('/api/opponents', data);
